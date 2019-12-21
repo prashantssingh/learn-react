@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Header from './Header'
 class App extends React.Component {
   render() {
     return (
@@ -7,8 +7,8 @@ class App extends React.Component {
         <div className="menu">
           <Header />
         </div>
-        <Inventory />
-        <Order />
+        {/* <Inventory />
+        <Order /> */}
       </div>
     );
   }
