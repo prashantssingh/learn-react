@@ -3,6 +3,28 @@ import Header from './Header'
 import Order from './Order'
 import Inventory from './Inventory'
 class App extends React.Component {
+  state = {
+    fishes : {},
+    order : {}
+  };
+
+  addFish = fish => {
+    // Fishes is going to be map of fish objects.
+    // Ideally, you should never edit the original object (mutate the mai object),
+    // instead, the good way is to make a shallow copy (only one level deep) and 
+    // mutate this new object and at the end of it simply replace the original object 
+    //  with the resulting object of the above step.
+    
+    // 1. Make a shallow copy of the fishes
+    const fishes = { ...this.state.fishes}; // spreading the field as they are in the main obj
+    // 2. Add new fish to fishes 
+    fishes[`fish${Date.now()}`] = fish;
+    // 3. Set new fishes object to the state
+    this.setState({
+      fishes: fishes
+    })
+  };
+
   render() {
     return (
       <div className="catch-of-the-day">
@@ -15,7 +37,7 @@ class App extends React.Component {
           <Header tagline="This is inside props" age={500} cool={true} />
         </div>
         <Order />
-        <Inventory />
+        <Inventory addFish={this.addFish} />
       </div>
     );
   }
