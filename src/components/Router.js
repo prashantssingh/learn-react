@@ -3,8 +3,9 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 
 import App from './App';
 import StorePicker from './StorePicker';
+import NotFound from './NotFound';
 
-const Router = () => {
+const Router = () => (
   <BrowserRouter>
     <Switch>
       <Router exact path="/" component={StorePicker} />
@@ -12,4 +13,6 @@ const Router = () => {
       <Router component={NotFound} />    
     </Switch>
   </BrowserRouter>
-}
+);
+
+export default Router;
