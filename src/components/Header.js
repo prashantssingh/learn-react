@@ -15,7 +15,7 @@ class Header extends React.Component {
         <h3 className="tagline">
           {/* Well, WHAT THE HELL?
           This is effectively saying that for a quick I want to access JavaScript syntax (Object Unwrapping,
-           to be precise) inside the JSX */}
+          to be precise) inside the JSX */}
           <span>{this.props.tagline}</span>
         </h3>
       </header>
