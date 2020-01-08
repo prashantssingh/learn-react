@@ -25,6 +25,10 @@ class App extends React.Component {
     })
   };
 
+  loadSampleFIshes = () => {
+    alert("Loading Samples");
+  }
+
   render() {
     return (
       <div className="catch-of-the-day">
@@ -37,7 +41,7 @@ class App extends React.Component {
           <Header tagline="This is inside props" age={500} cool={true} />
         </div>
         <Order />
-        <Inventory addFish={this.addFish} />
+        <Inventory addFish={this.addFish} loadSamples={this.loadSamples} />
       </div>
     );
   }
