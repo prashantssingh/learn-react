@@ -1,8 +1,10 @@
 import React from 'react';
-import Header from './Header'
-import Order from './Order'
-import Inventory from './Inventory'
-import sampleFishes from '../sample-fishes'
+import Header from './Header';
+import Order from './Order';
+import Inventory from './Inventory';
+import Fish from './Fish';
+
+\import sampleFishes from '../sample-fishes';
 
 class App extends React.Component {
   state = {
@@ -41,6 +43,9 @@ class App extends React.Component {
           
           Props provides ways to catch and store data into states for later use through one or more components */}
           <Header tagline="This is inside props" age={500} cool={true} />
+          <ul className="fishes">
+            {Object.keys(this.state.fishes).map(key => <Fish key={key} />)}
+          </ul>
         </div>
         <Order />
         <Inventory addFish={this.addFish} loadSamples={this.loadSamples} />
