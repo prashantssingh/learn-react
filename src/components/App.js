@@ -4,7 +4,7 @@ import Order from './Order';
 import Inventory from './Inventory';
 import Fish from './Fish';
 
-\import sampleFishes from '../sample-fishes';
+import sampleFishes from '../sample-fishes';
 
 class App extends React.Component {
   state = {
@@ -44,7 +44,7 @@ class App extends React.Component {
           Props provides ways to catch and store data into states for later use through one or more components */}
           <Header tagline="This is inside props" age={500} cool={true} />
           <ul className="fishes">
-            {Object.keys(this.state.fishes).map(key => <Fish key={key} />)}
+            {Object.keys(this.state.fishes).map(key => <Fish key={key} details={this.state.fishes[key]} />)}
           </ul>
         </div>
         <Order />
